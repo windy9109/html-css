@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>해당 엘리먼트에 형제 엘리먼트로 추가하기</title>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+$(document).ready(function(){
+    $("header").after("<div id='content1'>내가 좋아하는 사람</div>");
+    $("footer").before("<div id='centent2'>내가 싫어하는 사람</div>");
+});
+</script>
+</head>
+<body>  
+ <header> <h1> 과일 </h1></header>
+
+ <footer> <h3> <i> copyright syj </i> </h3> </footer>
+</body>
+</html>
