@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>엘리먼트의 태그 내부의 HTML 콘텐츠 변경하기</title>
+<style>
+.red {  color: red;  }
+</style>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("div").html("<span class='red'>span 엘리먼트 <b>b태그 내부</b></span>");
+    });
+});
+</script>
+</head>
+<body>  
+  <button> 클릭 </button>
+  <div></div>
+  <div></div>
+</body>
+</html>
