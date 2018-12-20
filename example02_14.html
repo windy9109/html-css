@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>속성 선택자</title>
+<meta charset="UTF-8">
+<style type="text/css">
+.spotlight {   background-color: #ff0;}
+.redtext {   color: #f00;}
+.bluetext {   color: #00f;}
+.largetext {   font-size: 30pt;}
+.italictext {   font-style: italic;}
+.box {   border: 3px solid #f00;}
+</style>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+    /* span 요소중에 id속성이 있는 경우 spotlight 클래스 추가 */
+    $("span[id]").addClass("spotlight");
+    
+    /* span 요소중에 id속성이 simpletext1인 경우 redtext 클래스 추가 */
+    $("span[id='simpletext1']").addClass("redtext");
+   
+    /* span 요소중에 id속성이 complex로 시작하는 경우 italictext 클래스 추가 */
+    $("span[id^='complex']").addClass("italictext");
+    
+     /* span 요소중에 id속성이 text1로 끝나는 경우 largetext 클래스 추가 */
+    $("span[id$='text1']").addClass("largetext");
+    
+    /* span 요소중에 id속성이 text를 포함하는 경우 box 클래스 추가 */
+    $("span[id*='text']").addClass("box");
+</script>
+</head>
+<body>
+  <span id="simpletext1">simple</span>  
+  <span class="simpletext2">jQuery</span>
+  <span id="complextext1">basic</span>  
+  <span id="complextext2">example</span>
+  <span id="complex">book</span>
+</body>
+</html>
