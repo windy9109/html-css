@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자바 스크립트의 각주, 변수(var), 객체, 함수</title>
+    <style>
+     /* 스타일 내부 각주 */
+    </style>
+    
+    <script>
+    /*여러줄 각주*/
+    //한줄각주
+        var age=26;
+        var name="김기태" //배열기억장소 : 여러개의 데이터를 특정 변수명으로 한 꺼번에 저장할때 쓴다
+        var arr=["류진실", "문선화", "안지현", "이슬기", "정다운" ]
+        //        arr[0]   arr[1]   arr[2]   arr[3]   arr[4]
+        var na=[1,"kim", 60];
+        function abc(){ //함수정의
+            document.write("안냐세요~?!");
+        }
+        //사용자 정의 객체
+        var obj={ num:1, name:"kim", jim:60,
+                prt:function(){ //메서드 정의
+                    document.write("번호"+this.num+", 성명:"+this.name+", 점수:"+this.jum);
+                }
+                };
+        //obj.num  obj.name  obj.jum
+        obj .prt();  //매서드 호출
+        obj .name;   //속성 가져오기
+        abc();  //함수호출
+        alert("당신의 이름은 "+arr[0]+"입니다."); //알림창으로 출력
+        document.write("당신의 이름은 "+arr[1]+"이며, 당신의 나이는 "+age+"입니다."); //body부분에 출력
+        console .log("당신의 이름은 "+arr[2]+"입니다."); //콘솔창에 출력
+    </script>
+</head>
+<body>
+    <!--태그 내의 각주-->
+</body>
+</html>
