@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css속성 - 배경 관련</title>
+    <!--인물의 외곽만 따오기 -> ex.png, ex2.png
+    jpg 배경이미지 2개-->
+    <style>
+        *{margin: 0;padding: 0;}
+        body, html{width: 100%; height: 100%;}
+        h1{text-align: center;}
+        .page { clear: both; width: 100%;height: 100%; overflow: hidden;} /* clear: both; > 옆으로 쌓이는걸 밑으로 내려라*/
+         /* 배경 통합 속성 규칙: 1.이미지 포지션  2.이미지 사이즈  3.이미지 반복 여부 4.attachment */
+        .back1{background:url("imges/ex1.png") bottom / 50% no-repeat fixed;}
+       
+        .back2{background-color: aqua; color: #fff;}
+        .back3{background-image: url("/imges/ex2.png"), url("/imges/img1.jpg"); background-repeat:no-repeat, repeat;
+        background-position:center center;}/* 배경 레이어와 반복여부. 정렬방식 */
+        .back4{background-image: url("ex.jpg"); background-size: 100% 100%; /*가로 세로 */ background-attachment: fixed;  /* background-attachment: fixed; > 배경에 고정된 배경. 많이 쓰임 */}
+       
+        
+
+        /* rgba와 hsl은 통합 속성 규칙만 적용됨, background-color는 쓰면 안돼고 background나 background-image만. */
+        .back5{background: rgba(128, 180, 10); }
+        .back6{background: hsl(240, 40%, 30%);} /* h:색상(최대 359도 까지) s:채도 l:명도 */
+        .back7{background: linear-gradient(-90deg, red, yellow);}
+        /* html 그라데이션 추출사이트 > http://colorzilla.com */
+        
+        
+        
+    </style> 
+</head>
+<body>
+    <article class="page back1">
+        <h1>배경속성: background 통합속성</h1>
+    </article>
+    <article class="page back2">
+        <h1>배경 색상 속성: background-color</h1>
+    </article>
+    <article class="page back3">
+        <h1>배경 이미지 속성: background-image</h1>
+        <h1>배경 반복 속성: background-repeat</h1>
+        <h1>배경 위치 속성: background-position</h1>
+    </article>
+    <article class="page back4">
+        <h1>배경 크기 속성: background-size</h1>
+        <h1>배경 스크롤 속성: background-attachment</h1>
+    </article>
+    <article class="page back5">
+    </article>
+    <article class="page back6">
+    </article>
+    <article class="page back7">
+    </article>
+</body>
+</html>
