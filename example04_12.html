@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>해당 엘리먼트의 모든 부모 엘리먼트 찾기</title>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+    $(document).ready(function(){
+        var res=new Array();
+        $("b").parents().each(function(i){
+            res[i]=this.tagName;
+        });
+    $("b").append(res.reverse().join(", "));
+    });
+</script>
+</head>
+<body>
+  <div>
+    <p>
+      <span> <b> 부모 엘리먼트 모두 검색 : </b> </span>
+    </p>
+  </div>
+</body>
+</html>
