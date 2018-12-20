@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자바스크립트 - 웹어플리케이션의 예1</title>
+    <script>
+    
+    </script>
+</head>
+<body>
+    <h2>계산기</h2>
+    <form action="" name="calcurator" id="cal1">
+        <table>
+           <tr>
+              <td colspan="5">
+              <input type="text" name="disp" id="disp" value="0">
+              </td>
+               
+           </tr>
+            <tr>
+                <td><input type="button" value="7" onclick="but(7)" class="btn"></td>
+                <td><input type="button" value="8" onclick="but(8)" class="btn"></td>
+                <td><input type="button" value="9" onclick="but(9)" class="btn"></td>
+                <td colspan="2"><input type="button" value="C" onclick="c()" class="clr"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" onclick="but(4)" class="btn"></td>
+                <td><input type="button" value="5" onclick="but(5)" class="btn"></td>
+                <td><input type="button" value="6" onclick="but(6)" class="btn"></td>
+                <td><input type="button" value="/" onclick="but('/')" class="btn"></td>
+                <td><input type="button" value="%" onclick="but('%')" class="btn"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="3" onclick="but(3)" class="btn"></td>
+                <td><input type="button" value="2" onclick="but(2)" class="btn"></td>
+                <td><input type="button" value="1" onclick="but(1)" class="btn"></td>
+                <td><input type="button" value="*" onclick="but('*')" class="btn"></td>
+                <td><input type="button" value="+" onclick="but('+')" class="btn"></td>
+            </tr>
+            <tr>
+               <td><input type="button" value="0" onclick="but(0)" class="btn"></td>
+                <td><input type="button" value="." onclick="but('.')" class="btn"></td>
+                <td colspan="2"><input type="button" value="=" onclick="total()" class="clr"></td>
+                <td><input type="button" value="-" onclick="but('-')" class="btn"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!--h2+form[name=calcurator]#cal1
+table>tr*5>td*5>input[type=button]-->
