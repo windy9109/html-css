@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>저수준 인터페이스 예제2</title>
+    <style>
+        .box{width: 600px; height: 900px; position: relative; margin: 100px auto;}
+        .box img{display: block; width: 100%; height: auto;
+        position: absolute; z-index: 5; left: 0; top:0;}
+        .box .src{display: block;}
+        .box .obj{display: none;}
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(function(){
+            $("box").mouseover(function(){
+                $(this).find(".src").stop().fadeOut(500);
+                $(this).find(".obj").stop().fadeIn(500);
+            });
+            $("box").mouseout(function(){
+               $(this).find(".obj").stop().fadeOut(500);
+                $(this).find(".src").stop().fadeIn(500); 
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="box">
+    <img src="02_on.jpg" alt="" class="src">
+    <img src="02_off.jpg" alt="" class="obj">
+    </div>
+</body>
+</html>
