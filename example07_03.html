@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>해당 엘리먼트를 사라지게 하기</title>
+<style>
+span{ display:none;}
+</style>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+$(function(){
+    $("#btn1").click(function(){
+        $("#data1").toggle();
+    });
+    $("#btn2").click(function(){
+        $("#data2").clearQueue().toggle(4000, function(){
+            $(this).css("background", "red");
+        });
+    });
+});
+</script>
+</head>
+<body>  
+  <button id="btn1">Show/Hide It</button> 
+  <span id="data1">안녕하세요.</span> <br>
+  <button id="btn2">Show/Hide It slow</button> 
+  <span id="data2">반갑습니다.</span>
+</body>
+</html>
