@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>필요 없는 이벤트 제거하기 </title>
+<style type="text/css">
+img{ 
+   width: 140px; height: 120px;		
+}
+</style>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+$(function(){
+    var n=1;
+    $('img').bind('click', function(event){
+        var $t=$(event.target);
+        $t.width($t.width()*2);
+        $t.height($t.height()*2);
+        n=n+1;
+        if(n>=4){
+            $t.unbind();
+        }
+    });
+});
+</script>
+</head>
+<body>   
+   <img src="banana.gif">
+</body>
+</html>
