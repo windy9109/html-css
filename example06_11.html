@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>포커스를 받으면 글씨 지우고 포커스를 잃으면 글씨 나타내기</title>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+$(function(){
+    $("#memid").val("아이디를 입력하세요").css("color", "#ccc");
+    $("#memid").focus(function(){
+        $("#memid").val("").css("color", "#000");
+    });
+    $("#memid").blur(function(event){
+        if($(event.target).val()==""){
+            $(event.target).val("아이디를 입력해 주셔").css("color", "red");
+        }
+    });
+    });
+</script>
+</head>
+<body>
+    <INPUT TYPE="text" id="memid"></INPUT>
+</body>
+</html>
