@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>더블 클릭 이벤트</title>
+<style type="text/css">
+img{ 
+   width: 40px; height: 30px;		
+}
+</style>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+$(function(){
+    $("img").dblclick(function(event){
+        var $t = $(event.target);
+        $t.width($t.width()+50).css("height", "auto");
+                                });
+});
+</script>
+</head>
+<body>   
+   <img src="banana.gif">
+</body>
+</html>
