@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>사용자 효과</title>
+<style>
+#region { 
+  position: relative; width: 200px; height:200px;
+  overflow:hidden;  margin:auto;
+}
+
+#images{
+   width: 1000px; height: 200px;
+}
+    
+    #images a{display: block; width: 200px; float: left;}
+#images a img { 
+  width:200px; height:200px; 
+  border:0; position: relative;}
+
+#direction {
+  width: 360px;  margin:auto;
+}
+.leftbtn{margin-top:10px;}
+.rightbtn{margin-left:290px;margin-top:10px;}
+</style>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+$(function(){
+    var num=$("#images a").length;
+    var imgWd = parseInt($("#region").width());
+   var intv = setInterval(function(){
+       nextAni();
+   }, 3000);
+       function nextAni(){
+           $("#images").not(":animated").animate({"margin-left":-imgWd+"px"}, 500, function(){
+               $("#images a").eq(0).appendTo($("#images"));
+               $("#images").css("margin-left", "0px");
+           });
+       };
+    function prevAni(){
+            
+            $("#images a").eq(num-1).prependTo($("#images"));    
+        $("#images").css("margin-left", -imgWd+"px");
+        $("#images").not(":animated").animate({"margin-left":"0px"}, 500);
+        };
+    
+           $(".rightbtn").click(function(){
+         clearInterval(intv);
+               nextAni();
+               intv = setInterval(function(){nextAni();}, 3000);
+           });
+    $(".leftbtn").click(function(){
+         clearInterval(intv);
+               prevAni();
+               intv = setInterval(function(){nextAni();}, 3000);
+           });
+       
+});
+</script>
+</head>
+<body>
+	<div id="region">
+		<div id="images">
+			<a href="#"><img src="1.png"></a> 
+			<a href="#"><img src="2.png"></a>
+			<a href="#"><img src="3.png"></a> 
+			<a href="#"><img src="4.png"></a>
+			<a href="#"><img src="5.png"></a> 
+		</div>
+	</div>
+	<div id="direction">
+		<button class="leftbtn">&laquo;</button>
+		<button class="rightbtn">&raquo;</button>
+	</div>
+	<button id="stop">정지</button>
+</body>
+</html>
