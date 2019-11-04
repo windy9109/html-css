@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>jQuery UI Effects - Effect demo</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <link rel="stylesheet" href="jui.css" />
+  <style>
+    .toggler { width: 500px; height: 200px; position: relative; }
+    #button { padding: .5em 1em; text-decoration: none; }
+    #effect { width: 240px; height: 135px; padding: 0.4em; position: relative; }
+    #effect h3 { margin: 0; padding: 0.4em; text-align: center; }
+    .ui-effects-transfer { border: 2px dotted gray; }
+  </style>
+  <script>
+      
+//#effectTypes을 선택하고, #button을 누르면 #effectTypes의 값에 해당하는 모션을 작동하도록 하되, 
+//만약 #effectTypes의 값을 scale로 했다면, 0 만큼 줄어드면서 사라지는 모션을 실행
+//size를 선택한 경우 width:200, height:60으로 변형되어 사라지는 모션, 
+//그 외의 값을 선택할 경우는 해당 모션의 애니메이션 효과를 0.5초 동안 사라지는 모션을 적용하고, 
+//적용 1초 후에는 원래대로 다시 돌아오도록 하시오.
+    //해당 메서드 : hide()
+    /* 효과의 종류
+    blind, bounce, clip, drop, explode, fade, fold, highlight, puff, pulsate,
+    scale, shake, size, slide   */
+    /* hide() 문법 : $(선택자).hide("효과의종류", 실행시간, 모션실행후추가작동내용);  */ 
+   
+   
+$(function(){
+    var selEf="";
+    var opt={};
+    $("#button").click(function(){
+        selEf = $("#effectTypes").val();
+        if(selEf=="scale"){
+           opt={percent:50}
+        }
+        else if(selEf=="size"){
+            opt={to:{ width:200, height:60 }};
+        }
+        $("#effect").hide(selEf, opt, 1000, callback);
+    });
+    function callback(){
+        setTimeout(function(){
+            $("#effect").hide().fadeIn();
+        }, 1000);
+    };
+});
+  </script>
+</head>
+<body>
+ 
+<div class="toggler">
+  <div id="effect" class="ui-widget-content ui-corner-all">
+    <h3 class="ui-widget-header ui-corner-all">Effect</h3>
+    <p>
+      Etiam libero neque, luctus a, eleifend nec, semper at, lorem. Sed pede. Nulla lorem metus, adipiscing ut, luctus sed, hendrerit vitae, mi.
+    </p>
+  </div>
+</div>
+ 
+<select name="effects" id="effectTypes">
+  <option value="blind">Blind</option>
+  <option value="bounce">Bounce</option>
+  <option value="clip">Clip</option>
+  <option value="drop">Drop</option>
+  <option value="explode">Explode</option>
+  <option value="fade">Fade</option>
+  <option value="fold">Fold</option>
+  <option value="highlight">Highlight</option>
+  <option value="puff">Puff</option>
+  <option value="pulsate">Pulsate</option>
+  <option value="scale">Scale</option>
+  <option value="shake">Shake</option>
+  <option value="size">Size</option>
+  <option value="slide">Slide</option>
+  <option value="transfer">Transfer</option>
+</select>
+ 
+<a id="button" class="ui-state-default ui-corner-all">Run Effect</a>
+ 
+ 
+</body>
+</html>
